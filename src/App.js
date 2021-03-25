@@ -6,7 +6,7 @@ import { ApolloProvider } from "react-apollo";
 import Continents from "./Continents";
 
 const client = new ApolloClient({
-  uri: "https:countries.trevorblades.com",
+  uri: process.env.API_URI,
 });
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <>
       <ApolloProvider client={client}>
         <h1>React + Apollo Client</h1>
-        <p>https://countries.trevorblades.com</p>
+        <p>{process.env.API_URI}</p>
         <Continents />
       </ApolloProvider>
     </>
